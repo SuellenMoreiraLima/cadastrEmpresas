@@ -1,9 +1,5 @@
-DROP TABLE IF EXISTS `empresa_cadastro`;
-CREATE TABLE `empresa_cadastro` (
-                            `id` int(11) NOT NULL AUTO_INCREMENT,
-                            `email` varchar(45) DEFAULT NULL,
-                            `nomeFantasia` varchar(45) DEFAULT NULL,
-                            `sobrenomeSocial` varchar(45) DEFAULT NULL,
-                            `empresa` varchar(45) DEFAULT NULL,
-                            PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO pessoa (id, cpf_cnpj, nome, nome_fantasia, email, aniversario, token) VALUES
+                                                                                      ( '98765432100', 'Maria Oliveira', 'Maria Modas', 'maria@example.com', '1985-10-20', 'token2'),
+                                                                                      ( '45678912300', 'Pedro Souza', 'Pedro Informática', 'pedro@example.com', '1988-03-25', 'token3'),
+                                                                                      ( '78912345600', 'Ana Santos', 'Ana Cosméticos', 'ana@example.com', '1995-07-08', 'token4'),
+                                                                                      ('65432198700', 'Lucas Lima', 'Lima & Associados', 'lucas@example.com', '1983-12-12', 'token5');
