@@ -22,6 +22,37 @@ public class Cadastro {
 
     private boolean empresa;
 
+//    @Embedded
+//    private Credencial credencial;
+//
+//    @Embedded
+//    private Parceiro parceiro;
+//
+//    @Embedded
+//    private Documentacao documentacao;
+//
+//    @Embedded
+//    @AttributeOverrides({
+//            @AttributeOverride(name="empresa", column=@Column(name="empresa")),})
+//    private Identificacao identificacao;
+//
+//    @Embedded
+//    @AttributeOverrides({
+//            @AttributeOverride(name="numero", column=@Column(name="endereco_numero")),
+//            @AttributeOverride(name="cidade", column=@Column(name="endereco_cidade"))
+//    })
+//    private Endereco endereco;
+//
+//    @OneToOne
+//    private Pessoa pessoa;
+//
+//    @Embedded
+//    private Telefone telefone;
+//
+//    @Embedded
+//    private Inscrito inscrito;
+
+
     public Integer getId() {
         return id;
     }

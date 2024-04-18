@@ -1,8 +1,11 @@
 package org.example.cadastroempresa.model;
 
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+@Embeddable
 @NoArgsConstructor
 @AllArgsConstructor
 public class Credencial {

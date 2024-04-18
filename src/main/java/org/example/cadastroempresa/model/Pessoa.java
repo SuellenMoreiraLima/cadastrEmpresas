@@ -28,6 +28,12 @@ public class Pessoa {
 
     private String token;
 
+//    @Embedded
+//    private Telefone telefone;
+//
+//    @Embedded
+//    private Domicilio domicilio;
+
     public int getId() {
         return id;
     }

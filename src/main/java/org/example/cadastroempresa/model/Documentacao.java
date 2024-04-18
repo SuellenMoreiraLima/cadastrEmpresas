@@ -1,10 +1,11 @@
 package org.example.cadastroempresa.model;
 
+import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
-
+@Embeddable
 @NoArgsConstructor
 @AllArgsConstructor
 public class Documentacao {
