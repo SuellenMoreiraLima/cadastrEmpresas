@@ -1,0 +1,5 @@
+INSERT INTO pessoa (id, cpf_cnpj, nome, nome_fantasia, email, aniversario, token) VALUES
+                                                                                      ( '98765432100', 'Maria Oliveira', 'Maria Modas', 'maria@example.com', '1985-10-20', 'token2'),
+                                                                                      ( '45678912300', 'Pedro Souza', 'Pedro Informática', 'pedro@example.com', '1988-03-25', 'token3'),
+                                                                                      ( '78912345600', 'Ana Santos', 'Ana Cosméticos', 'ana@example.com', '1995-07-08', 'token4'),
+                                                                                      ('65432198700', 'Lucas Lima', 'Lima & Associados', 'lucas@example.com', '1983-12-12', 'token5');

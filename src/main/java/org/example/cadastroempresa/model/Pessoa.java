@@ -14,6 +14,7 @@ public class Pessoa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(insertable=false, updatable=false)
     private int id;
 
     private String cpfCnpj;
@@ -28,11 +29,11 @@ public class Pessoa {
 
     private String token;
 
-//    @Embedded
-//    private Telefone telefone;
-//
-//    @Embedded
-//    private Domicilio domicilio;
+    @Embedded
+    private Telefone telefone;
+
+    @Embedded
+    private Domicilio domicilio;
 
     public int getId() {
         return id;

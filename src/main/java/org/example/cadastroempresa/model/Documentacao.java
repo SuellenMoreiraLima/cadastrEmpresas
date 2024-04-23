@@ -1,5 +1,6 @@
 package org.example.cadastroempresa.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -10,6 +11,7 @@ import java.util.Date;
 @AllArgsConstructor
 public class Documentacao {
 
+    @Column(insertable=false, updatable=false)
     private String numero;
 
     private String orgaoEmissor;

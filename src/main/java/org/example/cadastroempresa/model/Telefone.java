@@ -1,5 +1,6 @@
 package org.example.cadastroempresa.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -8,6 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Telefone {
 
+    @Column
+            (insertable=false, updatable=false)
     private Long numero;
 
     private boolean celular;
