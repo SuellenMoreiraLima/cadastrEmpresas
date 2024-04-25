@@ -4,6 +4,10 @@ import jakarta.persistence.Embeddable;
 import jakarta.persistence.Embedded;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.example.cadastroempresa.dto.DocumentacaoDTO;
+import org.example.cadastroempresa.dto.EnderecoDTO;
+import org.modelmapper.ModelMapper;
+
 @Embeddable
 @NoArgsConstructor
 @AllArgsConstructor
@@ -97,5 +101,13 @@ public class Endereco {
 
     public void setIbge(Integer ibge) {
         this.ibge = ibge;
+    }
+
+    public EnderecoDTO toDTO() {
+        ModelMapper mapper = new ModelMapper();
+
+        EnderecoDTO dto = mapper.map(this, EnderecoDTO.class);
+
+        return dto;
     }
 }

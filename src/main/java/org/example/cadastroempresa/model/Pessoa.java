@@ -3,6 +3,8 @@ package org.example.cadastroempresa.model;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.example.cadastroempresa.dto.PessoaDTO;
+import org.modelmapper.ModelMapper;
 
 import java.util.Date;
 
@@ -14,7 +16,6 @@ public class Pessoa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(insertable=false, updatable=false)
     private int id;
 
     private String cpfCnpj;
@@ -89,5 +90,13 @@ public class Pessoa {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public PessoaDTO toDTO() {
+        ModelMapper mapper = new ModelMapper();
+
+        PessoaDTO dto = mapper.map(this, PessoaDTO.class);
+
+        return dto;
     }
 }

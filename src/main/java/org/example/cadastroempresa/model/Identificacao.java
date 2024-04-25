@@ -4,6 +4,10 @@ import jakarta.persistence.Embeddable;
 import jakarta.persistence.Embedded;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.example.cadastroempresa.dto.DocumentacaoDTO;
+import org.example.cadastroempresa.dto.IdentificacaoDTO;
+import org.modelmapper.ModelMapper;
+
 @Embeddable
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,5 +34,13 @@ public class Identificacao {
 
     public void setIdentificador(String identificador) {
         this.identificador = identificador;
+    }
+
+    public IdentificacaoDTO toDTO() {
+        ModelMapper mapper = new ModelMapper();
+
+        IdentificacaoDTO dto = mapper.map(this, IdentificacaoDTO.class);
+
+        return dto;
     }
 }

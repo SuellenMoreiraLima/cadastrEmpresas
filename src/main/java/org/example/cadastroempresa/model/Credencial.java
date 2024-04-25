@@ -4,6 +4,9 @@ import jakarta.persistence.Embeddable;
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.example.cadastroempresa.dto.CadastroDTO;
+import org.example.cadastroempresa.dto.CredencialDTO;
+import org.modelmapper.ModelMapper;
 
 @Embeddable
 @NoArgsConstructor
@@ -38,5 +41,13 @@ public class Credencial {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public CredencialDTO toDTO() {
+        ModelMapper mapper = new ModelMapper();
+
+        CredencialDTO dto = mapper.map(this, CredencialDTO.class);
+
+        return dto;
     }
 }

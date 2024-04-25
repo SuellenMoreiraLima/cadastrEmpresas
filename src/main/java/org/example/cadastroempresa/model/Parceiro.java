@@ -3,6 +3,10 @@ package org.example.cadastroempresa.model;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.example.cadastroempresa.dto.IdentificacaoDTO;
+import org.example.cadastroempresa.dto.ParceiroDTO;
+import org.modelmapper.ModelMapper;
+
 @Embeddable
 @NoArgsConstructor
 @AllArgsConstructor
@@ -46,5 +50,13 @@ public class Parceiro {
 
     public void setColaborador(boolean colaborador) {
         this.colaborador = colaborador;
+    }
+
+    public ParceiroDTO toDTO() {
+        ModelMapper mapper = new ModelMapper();
+
+        ParceiroDTO dto = mapper.map(this, ParceiroDTO.class);
+
+        return dto;
     }
 }

@@ -3,6 +3,9 @@ package org.example.cadastroempresa.model;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.example.cadastroempresa.dto.CadastroDTO;
+import org.example.cadastroempresa.dto.PessoaDTO;
+import org.modelmapper.ModelMapper;
 
 @Entity
 @Table(name = "cadastro")
@@ -36,15 +39,9 @@ public class Cadastro {
     private Documentacao documentacao;
 
     @Embedded
-    @AttributeOverrides({
-            @AttributeOverride(name="empresa", column=@Column(name="empresa")),})
     private Identificacao identificacao;
 
     @Embedded
-    @AttributeOverrides({
-            @AttributeOverride(name="numero", column=@Column(name="endereco_numero")),
-            @AttributeOverride(name="cidade", column=@Column(name="endereco_cidade"))
-    })
     private Endereco endereco;
 
     @OneToOne
@@ -158,5 +155,13 @@ public class Cadastro {
 
     public void setPessoa(Pessoa pessoa) {
         this.pessoa = pessoa;
+    }
+
+    public CadastroDTO toDTO() {
+        ModelMapper mapper = new ModelMapper();
+
+        CadastroDTO dto = mapper.map(this, CadastroDTO.class);
+
+        return dto;
     }
 }

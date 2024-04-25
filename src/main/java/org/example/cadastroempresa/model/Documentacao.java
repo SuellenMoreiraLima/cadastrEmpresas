@@ -4,6 +4,9 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.example.cadastroempresa.dto.CredencialDTO;
+import org.example.cadastroempresa.dto.DocumentacaoDTO;
+import org.modelmapper.ModelMapper;
 
 import java.util.Date;
 @Embeddable
@@ -50,5 +53,13 @@ public class Documentacao {
 
     public void setDataValidade(Date dataValidade) {
         this.dataValidade = dataValidade;
+    }
+
+    public DocumentacaoDTO toDTO() {
+        ModelMapper mapper = new ModelMapper();
+
+        DocumentacaoDTO dto = mapper.map(this, DocumentacaoDTO.class);
+
+        return dto;
     }
 }
